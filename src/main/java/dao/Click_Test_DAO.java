@@ -1,7 +1,7 @@
 package dao;
 
 
-import model.Click_Test_DB;
+import model.clicktest.Click_Test_DB;
 
 import java.sql.*;
 

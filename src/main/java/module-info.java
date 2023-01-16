@@ -6,4 +6,8 @@ module fxml.speed_test {
 
     opens gui to javafx.fxml;
     exports gui;
+    exports model;
+    opens model to javafx.fxml;
+    exports model.clicktest;
+    opens model.clicktest to javafx.fxml;
 }

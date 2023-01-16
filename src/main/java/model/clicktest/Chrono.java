@@ -1,4 +1,4 @@
-package model;
+package model.clicktest;
 
 import javafx.beans.property.IntegerProperty;
 import javafx.beans.property.SimpleIntegerProperty;

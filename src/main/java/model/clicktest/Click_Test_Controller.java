@@ -1,4 +1,4 @@
-package gui;
+package model.clicktest;
 
 import dao.Click_Test_DAO;
 import javafx.animation.Animation;
@@ -9,8 +9,6 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.util.Duration;
-import model.Chrono;
-import model.Click_Test_DB;
 
 public class Click_Test_Controller {
 
@@ -38,10 +36,10 @@ public class Click_Test_Controller {
         chrono = new Chrono();
         timeline = new Timeline(new KeyFrame(Duration.millis(10), e -> {
             if(chrono.ss.get() == sec-1 && chrono.th.get() == 9 && chrono.hd.get() == 9) {
-                Click_Test_DB val = new Click_Test_DB(data.getSize(),"guillaume",nbClick,sec);
-                data.add(val);
                 timeline.stop();
                 click_button.setVisible(false);
+                Click_Test_DB val = new Click_Test_DB(data.getSize(),"guillaume",nbClick,sec);
+                data.add(val);
             }
             chrono.update();
         }));
@@ -52,8 +50,6 @@ public class Click_Test_Controller {
     public void initialize(){
         timer.textProperty().bind(Bindings.format("%02d:%d%d",chrono.ss,chrono.th,chrono.hd));
     }
-
-
 
     @FXML
     public void click(){

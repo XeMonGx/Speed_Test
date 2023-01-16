@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox alignment="CENTER" prefHeight="720.0" prefWidth="1250.0" spacing="20.0" style="-fx-background-color: #dedede;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.Click_Test_Controller">
+<VBox alignment="CENTER" prefHeight="720.0" prefWidth="1250.0" spacing="20.0" style="-fx-background-color: #dedede;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="model.clicktest.Click_Test_Controller">
    <HBox prefHeight="726.0" prefWidth="1250.0">
       <children>
          <VBox prefHeight="299.0" prefWidth="254.0" />

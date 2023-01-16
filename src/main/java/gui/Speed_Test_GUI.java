@@ -7,10 +7,10 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class Click_Test_GUI extends Application {
+public class Speed_Test_GUI extends Application {
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(Click_Test_GUI.class.getResource("click_test.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(Speed_Test_GUI.class.getResource("menu.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 1200, 720);
         stage.setTitle("Speeeed");
         stage.setScene(scene);

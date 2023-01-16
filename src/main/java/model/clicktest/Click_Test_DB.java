@@ -1,4 +1,4 @@
-package model;
+package model.clicktest;
 
 import java.sql.Date;
 
