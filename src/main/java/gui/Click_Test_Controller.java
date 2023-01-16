@@ -1,5 +1,6 @@
 package gui;
 
+import dao.Click_Test_DAO;
 import javafx.animation.Animation;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
@@ -7,12 +8,9 @@ import javafx.beans.binding.Bindings;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
 import javafx.util.Duration;
 import model.Chrono;
-
-import java.io.IOException;
+import model.Click_Test_DB;
 
 public class Click_Test_Controller {
 
@@ -27,14 +25,21 @@ public class Click_Test_Controller {
     private boolean first;
     private int nbClick;
     private int sec;
+    private Click_Test_DAO data;
 
     public Click_Test_Controller(){
+        String url = "jdbc:mysql://localhost:3306/SpeedTestDB";
+        String username = "root";
+        String password = "guillaume";
+        data = new Click_Test_DAO(url,username,password);
         sec = 5;
         nbClick = 0;
         first = true;
         chrono = new Chrono();
         timeline = new Timeline(new KeyFrame(Duration.millis(10), e -> {
             if(chrono.ss.get() == sec-1 && chrono.th.get() == 9 && chrono.hd.get() == 9) {
+                Click_Test_DB val = new Click_Test_DB(data.getSize(),"guillaume",nbClick,sec);
+                data.add(val);
                 timeline.stop();
                 click_button.setVisible(false);
             }
