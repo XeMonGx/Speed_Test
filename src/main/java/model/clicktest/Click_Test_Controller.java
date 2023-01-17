@@ -5,10 +5,14 @@ import javafx.animation.Animation;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.beans.binding.Bindings;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.util.Duration;
+import model.Menu_Controller;
+
+import java.io.IOException;
 
 public class Click_Test_Controller {
 
@@ -19,11 +23,11 @@ public class Click_Test_Controller {
     @FXML
     private Button click_button;
     private Timeline timeline;
-    private Chrono chrono;
+    private final Chrono chrono;
     private boolean first;
     private int nbClick;
     private int sec;
-    private Click_Test_DAO data;
+    private final Click_Test_DAO data;
 
     public Click_Test_Controller(){
         String url = "jdbc:mysql://localhost:3306/SpeedTestDB";
@@ -80,6 +84,11 @@ public class Click_Test_Controller {
     @FXML
     public void b15Sec(){
         sec = 15;
+    }
+
+    @FXML
+    public void back(ActionEvent event) throws IOException {
+        Menu_Controller.changePane(event,"game_selection.fxml");
     }
 
     @FXML

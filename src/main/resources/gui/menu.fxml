@@ -7,7 +7,6 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
 <HBox alignment="CENTER" prefHeight="355.0" prefWidth="577.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="model.Menu_Controller">
    <children>
       <VBox alignment="CENTER" prefHeight="189.0" prefWidth="223.0">
@@ -23,7 +22,7 @@
                   <Insets bottom="10.0" />
                </VBox.margin>
             </Button>
-            <Button mnemonicParsing="false" prefHeight="60.0" prefWidth="240.0" text="Advance" textAlignment="CENTER">
+            <Button mnemonicParsing="false" onAction="#advanceButton" prefHeight="60.0" prefWidth="240.0" text="Advance" textAlignment="CENTER">
                <font>
                   <Font size="24.0" />
                </font>

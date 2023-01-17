@@ -4,11 +4,11 @@ import java.sql.Date;
 
 public class Click_Test_DB {
 
-    private int id;
-    private Date date;
-    private String name;
-    private int nbClick;
-    private int second;
+    private final int id;
+    private final Date date;
+    private final String name;
+    private final int nbClick;
+    private final int second;
 
     public Click_Test_DB(int id, String name, int nbClick, int second) {
         this.id = id;
@@ -36,10 +36,6 @@ public class Click_Test_DB {
 
     public int getSecond() {
         return second;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 
     @Override
