@@ -12,7 +12,7 @@ public class Speed_Test_GUI extends Application {
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(Speed_Test_GUI.class.getResource("menu.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 1200, 720);
-        stage.setTitle("Speeeed");
+        stage.setTitle("Speed");
         stage.setScene(scene);
         stage.show();
     }

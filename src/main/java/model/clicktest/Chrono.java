@@ -8,7 +8,7 @@ public class Chrono {
     public IntegerProperty ss = new SimpleIntegerProperty();
     public IntegerProperty th = new SimpleIntegerProperty();
     public IntegerProperty hd = new SimpleIntegerProperty();
-    private final IntegerProperty cpt = new SimpleIntegerProperty();
+    private IntegerProperty cpt = new SimpleIntegerProperty();
 
     public void update(){
         cpt.set((cpt.get()) + 1);

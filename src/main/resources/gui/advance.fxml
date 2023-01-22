@@ -16,8 +16,8 @@
          <children>
             <VBox alignment="TOP_RIGHT" prefHeight="320.0" prefWidth="748.0">
                <children>
-                  <ChoiceBox prefWidth="150.0" />
-                  <LineChart prefHeight="237.0" prefWidth="874.0">
+                  <ChoiceBox fx:id="choiceSec" prefWidth="150.0" />
+                  <LineChart fx:id="linechart" prefHeight="237.0" prefWidth="874.0">
                     <xAxis>
                       <CategoryAxis side="BOTTOM" />
                     </xAxis>

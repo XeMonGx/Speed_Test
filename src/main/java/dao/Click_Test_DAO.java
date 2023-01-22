@@ -1,6 +1,7 @@
 package dao;
 
 
+import javafx.scene.chart.XYChart;
 import model.clicktest.Click_Test_DB;
 
 import java.sql.*;
@@ -20,9 +21,9 @@ public class Click_Test_DAO {
     public void add(Click_Test_DB clickTestDb){
         try {
             Connection con = DriverManager.getConnection(url,username,password);
-            if(clickTestDb.getId() != 0){
+            if(clickTestDb.getId() != -1){
                 PreparedStatement statement = con.prepareStatement(
-                        "insert into clickTest values (?,?,?,?,?)"
+                        "insert into clickTest values (?,?,?,?,?);"
                 );
                 statement.setInt(1,clickTestDb.getId());
                 statement.setDate(2,clickTestDb.getDate());

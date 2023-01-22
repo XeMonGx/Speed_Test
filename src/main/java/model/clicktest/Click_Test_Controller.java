@@ -23,11 +23,11 @@ public class Click_Test_Controller {
     @FXML
     private Button click_button;
     private Timeline timeline;
-    private final Chrono chrono;
+    private Chrono chrono;
     private boolean first;
     private int nbClick;
     private int sec;
-    private final Click_Test_DAO data;
+    private Click_Test_DAO data;
 
     public Click_Test_Controller(){
         String url = "jdbc:mysql://localhost:3306/SpeedTestDB";
@@ -41,11 +41,13 @@ public class Click_Test_Controller {
         timeline = new Timeline(new KeyFrame(Duration.millis(10), e -> {
             if(chrono.ss.get() == sec-1 && chrono.th.get() == 9 && chrono.hd.get() == 9) {
                 timeline.stop();
+                chrono.update();
                 click_button.setVisible(false);
                 Click_Test_DB val = new Click_Test_DB(data.getSize(),"guillaume",nbClick,sec);
                 data.add(val);
+            }else{
+                chrono.update();
             }
-            chrono.update();
         }));
         timeline.setCycleCount(Animation.INDEFINITE);
     }
