@@ -28,7 +28,7 @@ public class Advance_DAO {
                 series.getData().add(new XYChart.Data(String.valueOf(i),resultCount.getInt(1)));
                 i++;
             }while (resultCount.next());
-            series.setName(sec+"s");
+            series.setName(sec + "s");
             return series;
         } catch (SQLException e) {
             throw new RuntimeException(e);

@@ -15,7 +15,7 @@ public class Advence_Controller {
     private LineChart linechart;
     @FXML
     private ChoiceBox<String> choiceSec;
-    private String[] sec = {"1","2","5","10","15"};
+    private String[] sec = {"All","1","2","5","10","15"};
 
     @FXML
     public void initialize(){
@@ -23,16 +23,29 @@ public class Advence_Controller {
         String username = "root";
         String password = "guillaume";
         data = new Advance_DAO(url,username,password);
+
         linechart.setTitle("Click");
         linechart.getData().add(data.getClickTest(5));
+
         choiceSec.setValue("5");
         choiceSec.getItems().addAll(sec);
         choiceSec.setOnAction(this::getScore);
     }
 
     public void getScore(ActionEvent event){
-        linechart.getData().remove(0);
-        linechart.getData().add(data.getClickTest(Integer.parseInt(choiceSec.getValue())));
+        while (linechart.getData().size()!=0){
+            linechart.getData().remove(linechart.getData().size()-1);
+        }
+        if(choiceSec.getValue().equals("All")){
+            for(String val : choiceSec.getItems()){
+                if(!val.equals("All")){
+                    linechart.getData().add(data.getClickTest(Integer.parseInt(val)));
+                }
+            }
+        }else{
+            linechart.getData().add(data.getClickTest(Integer.parseInt(choiceSec.getValue())));
+        }
+
     }
 
     @FXML
